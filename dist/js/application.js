@@ -21,7 +21,6 @@ $(document).ready(function () {
       return tmp;
   }();
   indicator_val = (get_data.balance_usd) * 100;
-  console.log(indicator_val);
 
   var interval_id = null;
   function increase_val(){
@@ -30,7 +29,6 @@ $(document).ready(function () {
           $(".js-progress-bar").width((indicator_val / percent) + '%');
           $(".js-need-more").html((target - indicator_val) / 100);
           $(".js-label-info").html(indicator_val / 100);
-          console.log(indicator_val);
      } else {
           clearInterval(interval_id);
           $(".js-need-more").parent().addClass("hidden");
