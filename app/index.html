@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Indicator</title>
+  <title>Target Indicator Demo</title>
   
   <link rel="stylesheet" href="css/application.css">
   <script src="vendor/jquery.js"></script>
@@ -12,17 +12,33 @@
 </head>
 <body>
   <section class="site-layout">
-    <div class="result">
-      <div class="progress-wrapper">
-        <div class="result-progress progress js-result-progress">
-          <div class="progress-bar js-progress-bar"></div>
+    <div class="result-wrapper">
+      
+      <div class="result">
+        <div class="result-info">
+          Reached:
         </div>
-        <div class="progress-label js-progress-label">
-          $<span class="js-label-info">0</span>
+        <div class="result-progress-wrapper">
+          <div class="progress js-result-progress">
+            <div class="progress-bar js-progress-bar">
+              <div class="progress-label js-progress-label">
+                $<span class="js-label-info">0</span>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="result-target js-result-target">
+          <div class="result-target-text">
+            Target
+          </div>
+          <div class="result-target-amount">
+            $15
+          </div>
         </div>
       </div>
       <div class="result-description js-result-description">
-        You need $<span class="js-need-more">1</span> more to reach your target
+        <span class="result-description-icon"><i class="icon icon-info"></i></span>You need $<span class="js-need-more">1</span> more to reach your target
       </div>
     </div>
   </section>

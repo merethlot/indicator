@@ -1,41 +1,151 @@
 @import "reset.less";
 
+@success-color: #00A910;
+
 .site-layout {
   display: flex;
   flex: 1 0 auto;
+  height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: #f2f2f2;
+  font-size: 10px;
+  color: #555;
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 .result {
-  width: 400px;
-  height: 60px;
-  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  &-wrapper {
+    width: 325px;
+    padding: 40px 35px 10px;
+    border-radius: 6px;
+    border: 1px solid #d5d3d3;
+    background-color: #fff;
+  
+  }
   &-progress {
-    width: 100%;
-    padding: 2px;
+    width: 120px;
+    &-wrapper {
+      position: relative;
+      // padding-bottom: 20px;
+      flex: 1 0 120px;
+    }
+  }
+  &-info {
+    padding: 0 8px 0 4px;
+    font-weight: bold;
+    
+  }
+  &-target {
+    margin-left: 7px;
+    color: #fff;
+    border-radius: 3px;
+    padding: 3px 2px;
+    text-align: center;
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a5a0a0+0,6f6e72+100 */
+    background: #a5a0a0; /* Old browsers */
+    background: -moz-linear-gradient(top, #a5a0a0 0%, #6f6e72 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #a5a0a0 0%,#6f6e72 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #a5a0a0 0%,#6f6e72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5a0a0', endColorstr='#6f6e72',GradientType=0 ); /* IE6-9 */    
+    &.success {
+      background: @success-color;
+    }
+    &-text {
+      border-bottom: 1px solid  #7f7d80;
+      padding: 0 5px 1px;
+      .success & {
+        border-bottom-color: #029610;
+      }
+    }
+    &-amount {
+      font-size: 13px;
+      font-weight: bold;
+      border-top: 1px solid  #a5a0a0;
+      padding: 1px 5px;
+      .success & {
+        border-top-color: #26c135;
+      }
+    }
+  }
+  &-description-icon {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6797b3+0,447492+100 */
+    background: #6797b3; /* Old browsers */
+    background: -moz-linear-gradient(top, #6797b3 0%, #447492 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #6797b3 0%,#447492 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #6797b3 0%,#447492 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6797b3', endColorstr='#447492',GradientType=0 ); /* IE6-9 */    
+    text-align: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;    
+    padding: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
   }
 }
 
 .progress {
-  background-color: #ababab;
-  &-wrapper {
-    position: relative;
-    padding-bottom: 20px;
+  width: 100%;
+  padding: 3px;
+  background-color: #cecece;
+  transition: background-color 0.5s ease;
+  &:after {
+    background: #cecece;
+    content: "";
+    display: block;
+    width: 7px;
+    height: 13px;
+    position: absolute;
+    right: -7px;
+    top: 0;    
   }
   &-bar {
-    background-color: blue;
+    background-color: #0489d1;
     width: 0%;
-    height: 8px;
+    height: 7px;
     transition: all 0.5s linear;
+    position: relative;
+    
   }
   &-label {
     position: absolute;
-    bottom: 0;
-    left: 0%;
-    margin-left: -10px;
+    bottom: -20px;
+    // left: 0%;
+    right: 0;
+    // margin-left: -12px;
+    margin-right: -15px;
+    width: 25px;
     transition: all 0.5s linear;
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      top: -7px;
+      left: 5px;
+      // margin-left: -2px;
+      border: 3px solid transparent;
+      border-bottom-color: #555;
+    }
   }
+}
+
+.icon-info {
+    background: url(../img/icon-info.svg) center center no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    display: inline-block;
 }
 
 
